@@ -142,7 +142,8 @@ def main():
             # Log and register the model in one step
             model_info = mlflow.sklearn.log_model(
                 sk_model=clf,
-                registered_model_name=model_name
+                registered_model_name=model_name,
+                artifact_path="model"
             )
             
             # Get the model version

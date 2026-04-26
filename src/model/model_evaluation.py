@@ -142,7 +142,6 @@ def main():
             # Log and register the model in one step
             model_info = mlflow.sklearn.log_model(
                 sk_model=clf,
-                name=model_name,  # This creates the model in the registry
                 registered_model_name=model_name
             )
             

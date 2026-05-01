@@ -374,11 +374,9 @@ scrape_configs:
 
 For questions, feedback, or collaboration opportunities:
 
-* **Project Lead:** [Your Name]
-* **Email:** your.email@example.com
-* **LinkedIn:** linkedin.com/in/your-profile
-* **GitHub:** github.com/your-username
-
+* **Project Lead:** Abhijeet Samal
+* **Email:** abhijeetsml4@gmail.com
+* **LinkedIn:** linkedin.com/in/abhijeet-samal
 ---
 
 ## 📝 License

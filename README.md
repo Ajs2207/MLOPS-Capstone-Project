@@ -32,7 +32,7 @@
 
 ## ✨ Overview
 
-**Atlas** is a production-grade MLOps pipeline that demonstrates the complete lifecycle of machine learning models - from data ingestion and experimentation to deployment and monitoring. This project showcases industry best practices for automating ML workflows, containerizing applications, orchestrating deployments on Kubernetes, and implementing comprehensive observability.
+This is a production-grade MLOps pipeline that demonstrates the complete lifecycle of machine learning models - from data ingestion and experimentation to deployment and monitoring. This project showcases industry best practices for automating ML workflows, containerizing applications, orchestrating deployments on Kubernetes, and implementing comprehensive observability.
 
 **Key Highlights:**
 - 🔄 **End-to-End ML Pipeline**: From data ingestion to production-ready API
@@ -148,8 +148,8 @@ flowchart TB
 
 ## 📁 Project Structure
 
-\`\`\`
-atlas-mlops/
+```
+MLOPS-Capstone-Project/
 │
 ├── .github/workflows/
 │   └── ci.yaml                 # CI/CD pipeline definition
@@ -180,7 +180,7 @@ atlas-mlops/
 ├── deployment.yaml             # Kubernetes deployment manifest
 │
 └── README.md                   # Project documentation
-\`\`\`
+```
 
 ---
 
@@ -197,7 +197,7 @@ atlas-mlops/
 
 ### **Local Development Setup**
 
-\`\`\`bash
+```bash
 # Clone repository
 git clone https://github.com/Ajs2207/MLOPS-Capstone-Project.git
 cd MLOPS-Capstone-Project
@@ -212,11 +212,11 @@ pip install -r requirements.txt
 # Run locally
 cd flask_app
 python app.py
-\`\`\`
+```
 
 ### **DVC Pipeline Execution**
 
-\`\`\`bash
+```bash
 # Initialize DVC
 dvc init
 
@@ -228,17 +228,17 @@ dvc repro
 
 # Check status
 dvc status
-\`\`\`
+```
 
 ### **Docker Build & Run**
 
-\`\`\`bash
+```bash
 # Build image
 docker build -t capstone-app:latest .
 
 # Run container
 docker run -p 8888:5000 -e CAPSTONE_TEST=<your-token> capstone-app:latest
-\`\`\`
+```
 
 ---
 
@@ -270,7 +270,7 @@ docker run -p 8888:5000 -e CAPSTONE_TEST=<your-token> capstone-app:latest
 
 ### **Deploy to EKS**
 
-\`\`\`bash
+```bash
 # Create EKS cluster
 eksctl create cluster --name flask-app-cluster --region us-east-1 \
   --nodegroup-name flask-app-nodes --node-type t3.small --nodes 1
@@ -286,11 +286,11 @@ kubectl get svc flask-app-service
 
 # Test the deployment
 curl http://<external-ip>:5000
-\`\`\`
+```
 
 ### **Sample Kubernetes Deployment**
 
-\`\`\`yaml
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -322,7 +322,7 @@ spec:
       targetPort: 5000
   selector:
     app: flask-app
-\`\`\`
+```
 
 ---
 
@@ -330,7 +330,7 @@ spec:
 
 ### **Prometheus Configuration**
 
-\`\`\`yaml
+```yaml
 # prometheus.yml
 global:
   scrape_interval: 15s
@@ -339,7 +339,7 @@ scrape_configs:
   - job_name: "flask-app"
     static_configs:
       - targets: ["<load-balancer-dns>:5000"]
-\`\`\`
+```
 
 ### **Metrics Tracked**
 

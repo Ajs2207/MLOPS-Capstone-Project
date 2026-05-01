@@ -97,14 +97,14 @@ flowchart TB
 * ![kubectl Badge](https://img.shields.io/badge/-kubectl-326CE5) **kubectl CLI** - Kubernetes command-line tool
 
 ### **Cloud Services (AWS)**
-* ![AWS EKS Badge](https://img.shields.io/badge/-AWS%2520EKS-FF9900?logo=amazonaws&logoColor=white) **Amazon EKS** - Fully managed Kubernetes service
-* ![AWS S3 Badge](https://img.shields.io/badge/-AWS%2520S3-569A31?logo=amazons3&logoColor=white) **AWS S3 Storage** - Scalable object storage
-* ![AWS ECR Badge](https://img.shields.io/badge/-AWS%2520ECR-FF9900?logo=amazonaws&logoColor=white) **Amazon ECR** - Private Docker image registry
-* ![AWS IAM Badge](https://img.shields.io/badge/-AWS%2520IAM-FF9900?logo=amazonaws&logoColor=white) **AWS IAM Security** - Identity and access management
+* ![AWS EKS Badge](https://img.shields.io/badge/-AWS%20EKS-FF9900?logo=amazonaws&logoColor=white) **Amazon EKS** - Fully managed Kubernetes service
+* ![AWS S3 Badge](https://img.shields.io/badge/-AWS%20S3-569A31?logo=amazons3&logoColor=white) **AWS S3 Storage** - Scalable object storage
+* ![AWS ECR Badge](https://img.shields.io/badge/-AWS%20ECR-FF9900?logo=amazonaws&logoColor=white) **Amazon ECR** - Private Docker image registry
+* ![AWS IAM Badge](https://img.shields.io/badge/-AWS%20IAM-FF9900?logo=amazonaws&logoColor=white) **AWS IAM Security** - Identity and access management
 
 ### **CI/CD & Automation**
-* ![GitHub Actions Badge](https://img.shields.io/badge/-GitHub%2520Actions-2088FF?logo=githubactions&logoColor=white) **GitHub Actions CI/CD** - Automated workflows and testing
-* ![GitHub Secrets Badge](https://img.shields.io/badge/-GitHub%2520Secrets-2088FF?logo=github&logoColor=white) **Secrets Management** - Secure credential handling
+* ![GitHub Actions Badge](https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white) **GitHub Actions CI/CD** - Automated workflows and testing
+* ![GitHub Secrets Badge](https://img.shields.io/badge/-GitHub%20Secrets-2088FF?logo=github&logoColor=white) **Secrets Management** - Secure credential handling
 
 ### **Monitoring & Observability**
 * ![Prometheus Badge](https://img.shields.io/badge/-Prometheus-E6522C?logo=prometheus&logoColor=white) **Prometheus Metrics Collection** - Time-series metrics database

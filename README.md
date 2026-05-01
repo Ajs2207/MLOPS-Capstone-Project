@@ -72,3 +72,64 @@ graph TB
     
     F --> K
     K --> N
+
+
+🛠️ Technology Stack
+Category	Technologies
+Language	https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white Python 3.10
+Data Version Control	https://img.shields.io/badge/-DVC-13ADC7?logo=dvc&logoColor=white DVC
+Experiment Tracking	https://img.shields.io/badge/-MLFlow-0194E2?logo=mlflow&logoColor=white MLFlow • https://img.shields.io/badge/-Dagshub-2c3e50 Dagshub
+Web Framework	https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white Flask
+Containerization	https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white Docker
+Orchestration	https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=white Kubernetes • https://img.shields.io/badge/-EKS-FF9900?logo=amazonaws&logoColor=white AWS EKS
+Cloud Services	https://img.shields.io/badge/-AWS%2520S3-569A31?logo=amazons3&logoColor=white S3 • https://img.shields.io/badge/-AWS%2520ECR-FF9900?logo=amazonaws&logoColor=white ECR
+CI/CD	https://img.shields.io/badge/-GitHub%2520Actions-2088FF?logo=githubactions&logoColor=white GitHub Actions
+Monitoring	https://img.shields.io/badge/-Prometheus-E6522C?logo=prometheus&logoColor=white Prometheus • https://img.shields.io/badge/-Grafana-F46800?logo=grafana&logoColor=white Grafana
+Infrastructure	https://img.shields.io/badge/-eksctl-FF9900 eksctl • https://img.shields.io/badge/-kubectl-326CE5 kubectl
+## 🛠️ Technology Stack
+
+
+| Category | Technologies |
+| :--- | :--- |
+| **Language** | ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) Python 3.10 |
+| **Data Version Control** | ![DVC](https://img.shields.io/badge/-DVC-13ADC7?logo=dvc&logoColor=white) DVC |
+| **Experiment Tracking** | ![MLFlow](https://img.shields.io/badge/-MLFlow-0194E2?logo=mlflow&logoColor=white) MLFlow • ![Dagshub](https://img.shields.io/badge/-Dagshub-2c3e50) Dagshub |
+| **Web Framework** | ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white) Flask |
+| **Containerization** | ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white) Docker |
+| **Orchestration** | ![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=white) Kubernetes • ![EKS](https://img.shields.io/badge/-EKS-FF9900?logo=amazonaws&logoColor=white) AWS EKS |
+| **Cloud Services** | ![S3](https://shields.io) S3 • ![ECR](https://shields.io) ECR |
+| **CI/CD** | ![GitHub Actions](https://shields.io) GitHub Actions |
+| **Monitoring** | ![Prometheus](https://img.shields.io/badge/-Prometheus-E6522C?logo=prometheus&logoColor=white) Prometheus • ![Grafana](https://img.shields.io/badge/-Grafana-F46800?logo=grafana&logoColor=white) Grafana |
+| **Infrastructure** | ![eksctl](https://img.shields.io/badge/-eksctl-FF9900) eksctl • ![kubectl](https://img.shields.io/badge/-kubectl-326CE5) kubectl |
+
+## 🚀 Features
+
+### 📊 Data Management
+* **Data Version Control** with DVC for tracking datasets and models
+* **Automated Data Pipelines** with `dvc repro` for reproducible workflows
+* **S3 Integration** for scalable remote storage of data artifacts
+
+### 🧪 Experiment Tracking
+* **MLFlow Integration** with Dagshub for experiment logging and comparison
+* **Model Registry** for versioning and promoting models
+* **Parameter Management** via centralized `params.yaml`
+
+### 🔄 CI/CD Pipeline
+* **Automated Testing** on every push using GitHub Actions
+* **Docker Image Building** and pushing to AWS ECR
+* **Zero-Downtime Deployment** to EKS cluster
+* **Environment Secrets Management** with GitHub Secrets
+
+### ☁️ Cloud Infrastructure
+* **AWS EKS Cluster** for container orchestration
+* **AWS S3** for persistent data storage
+* **AWS ECR** for private Docker image registry
+* **LoadBalancer Service** for external traffic routing
+
+### 📈 Monitoring & Observability
+* **Prometheus** for metrics collection and scraping
+* **Grafana** for real-time dashboards and visualization
+* **Custom Metrics** from Flask application
+
+
+📁 Project Structure

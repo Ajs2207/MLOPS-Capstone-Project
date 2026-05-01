@@ -1,4 +1,4 @@
-# 🚀 MLOps Pipeline
+# 🚀 MLOps Capstone Project
 
 <div align="center">
 
@@ -16,16 +16,17 @@
 ---
 
 ## 📋 Table of Contents
+
 - [✨ Overview](#-overview)
 - [🏗️ Architecture](#️-architecture)
-- [🛠️ Technology Stack](#️-technology-stack)
+- [🛠️ Tech Stack](#️-tech-stack)
 - [🚀 Features](#-features)
 - [📁 Project Structure](#-project-structure)
-- [🔧 Infrastructure & Deployment](#-infrastructure--deployment)
+- [⚙️ Installation & Setup](#️-installation--setup)
+- [🔧 Pipeline Components](#-pipeline-components)
+- [🌐 Deployment](#-deployment)
 - [📊 Monitoring & Observability](#-monitoring--observability)
-- [⚡ CI/CD Pipeline](#-cicd-pipeline)
-- [🚀 Getting Started](#-getting-started)
-- [📞 Contact](#-contact)
+- [🤝 Contributing](#-contributing)
 
 ---
 
@@ -46,8 +47,8 @@
 ## 🏗️ Architecture
 
 ```mermaid
-graph TB
-    subgraph "CI/CD Pipeline"
+flowchart TB
+    subgraph CI/CD["CI/CD Pipeline"]
         A[GitHub Push] --> B[GitHub Actions]
         B --> C[Run Tests]
         C --> D[Build Docker]
@@ -55,168 +56,339 @@ graph TB
         E --> F[Deploy to EKS]
     end
     
-    subgraph "Data & Experiment Tracking"
+    subgraph Data["Data & Experiment Tracking"]
         G[DVC] --> H[S3 Bucket]
         I[MLFlow] --> J[Dagshub]
     end
     
-    subgraph "Kubernetes Cluster EKS"
+    subgraph K8s["Kubernetes Cluster EKS"]
         K[Flask App Pod] --> L[LoadBalancer Service]
         L --> M[External Traffic]
     end
     
-    subgraph "Monitoring Stack"
+    subgraph Monitor["Monitoring Stack"]
         N[Prometheus] --> O[Grafana]
         O --> P[Dashboards]
     end
     
     F --> K
     K --> N
+```
 
-🛠️ Tech Stack
-Backend & ML
-https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white Python 3.10
+---
 
-https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white Flask API
+## 🛠️ Tech Stack
 
-https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white Pandas & NumPy
+### **Backend & ML**
+* ![Python Badge](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) **Python 3.10** - Core programming language
+* ![Flask Badge](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white) **Flask API** - Web framework for model serving
+* ![Pandas Badge](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white) **Pandas & NumPy** - Data manipulation and computation
+* ![Scikit-learn Badge](https://img.shields.io/badge/-Scikit--learn-F7931E?logo=scikit-learn&logoColor=white) **Scikit-learn** - Machine learning algorithms
 
-https://img.shields.io/badge/-Scikit--learn-F7931E?logo=scikit-learn&logoColor=white Scikit-learn
+### **Data Version Control & Experiment Tracking**
+* ![DVC Badge](https://img.shields.io/badge/-DVC-13ADC7?logo=dvc&logoColor=white) **DVC for Data Version Control** - Track datasets and models
+* ![MLFlow Badge](https://img.shields.io/badge/-MLFlow-0194E2?logo=mlflow&logoColor=white) **MLFlow Experiment Tracking** - Experiment logging and comparison
+* ![Dagshub Badge](https://img.shields.io/badge/-Dagshub-2c3e50) **Dagshub Remote Tracking** - Remote experiment repository
 
-Data Version Control & Experiment Tracking
-https://img.shields.io/badge/-DVC-13ADC7?logo=dvc&logoColor=white DVC for Data Version Control
+### **Containerization & Orchestration**
+* ![Docker Badge](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white) **Docker Containerization** - Container images and deployment
+* ![Kubernetes Badge](https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=white) **Kubernetes (EKS)** - Container orchestration platform
+* ![eksctl Badge](https://img.shields.io/badge/-eksctl-FF9900) **eksctl Cluster Management** - AWS EKS cluster provisioning
+* ![kubectl Badge](https://img.shields.io/badge/-kubectl-326CE5) **kubectl CLI** - Kubernetes command-line tool
 
-https://img.shields.io/badge/-MLFlow-0194E2?logo=mlflow&logoColor=white MLFlow Experiment Tracking
+### **Cloud Services (AWS)**
+* ![AWS EKS Badge](https://img.shields.io/badge/-AWS%2520EKS-FF9900?logo=amazonaws&logoColor=white) **Amazon EKS** - Fully managed Kubernetes service
+* ![AWS S3 Badge](https://img.shields.io/badge/-AWS%2520S3-569A31?logo=amazons3&logoColor=white) **AWS S3 Storage** - Scalable object storage
+* ![AWS ECR Badge](https://img.shields.io/badge/-AWS%2520ECR-FF9900?logo=amazonaws&logoColor=white) **Amazon ECR** - Private Docker image registry
+* ![AWS IAM Badge](https://img.shields.io/badge/-AWS%2520IAM-FF9900?logo=amazonaws&logoColor=white) **AWS IAM Security** - Identity and access management
 
-https://img.shields.io/badge/-Dagshub-2c3e50 Dagshub Remote Tracking
+### **CI/CD & Automation**
+* ![GitHub Actions Badge](https://img.shields.io/badge/-GitHub%2520Actions-2088FF?logo=githubactions&logoColor=white) **GitHub Actions CI/CD** - Automated workflows and testing
+* ![GitHub Secrets Badge](https://img.shields.io/badge/-GitHub%2520Secrets-2088FF?logo=github&logoColor=white) **Secrets Management** - Secure credential handling
 
-Containerization & Orchestration
-https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white Docker Containerization
+### **Monitoring & Observability**
+* ![Prometheus Badge](https://img.shields.io/badge/-Prometheus-E6522C?logo=prometheus&logoColor=white) **Prometheus Metrics Collection** - Time-series metrics database
+* ![Grafana Badge](https://img.shields.io/badge/-Grafana-F46800?logo=grafana&logoColor=white) **Grafana Dashboards** - Visualization and monitoring
+* **Custom Logging Framework** - Application-level logging
+* **Real-time Application Monitoring** - Performance tracking and alerting
 
-https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=white Kubernetes (EKS)
+---
 
-https://img.shields.io/badge/-eksctl-FF9900 eksctl Cluster Management
+## 🚀 Features
 
-https://img.shields.io/badge/-kubectl-326CE5 kubectl CLI
+### 📊 Data Management
+* **Data Version Control with DVC** - Track datasets and models versions
+* **Automated Data Pipelines** - DVC repro for reproducible workflows
+* **S3 Integration** - Scalable remote storage of data artifacts
 
-Cloud Services (AWS)
-https://img.shields.io/badge/-AWS%2520EKS-FF9900?logo=amazonaws&logoColor=white Amazon EKS
+### 🧪 Experiment Tracking
+* **MLFlow Integration with Dagshub** - Experiment logging and comparison
+* **Model Registry** - Versioning and promoting models to production
+* **Parameter Management** - Centralized params.yaml configuration
 
-https://img.shields.io/badge/-AWS%2520S3-569A31?logo=amazons3&logoColor=white AWS S3 Storage
+### 🔄 CI/CD Pipeline
+* **Automated Testing** - Comprehensive tests on every push using GitHub Actions
+* **Docker Image Building** - Automatic building and pushing to AWS ECR
+* **Zero-Downtime Deployment** - Seamless deployment to EKS cluster
+* **Environment Secrets Management** - Secure handling with GitHub Secrets
 
-https://img.shields.io/badge/-AWS%2520ECR-FF9900?logo=amazonaws&logoColor=white Amazon ECR
+### ☁️ Cloud Infrastructure
+* **AWS EKS Cluster** - Fully managed containerization and orchestration
+* **AWS S3 Storage** - Persistent data storage with high availability
+* **AWS ECR** - Private Docker image registry for secure image management
+* **LoadBalancer Service** - External traffic routing with auto-scaling
 
-https://img.shields.io/badge/-AWS%2520IAM-FF9900?logo=amazonaws&logoColor=white AWS IAM Security
+### 📈 Monitoring & Observability
+* **Prometheus Integration** - Metrics collection and scraping from applications
+* **Grafana Dashboards** - Real-time visualization and monitoring
+* **Custom Metrics** - Application-level metrics from Flask
+* **Alerting Capabilities** - Proactive monitoring and notifications
 
-CI/CD & Automation
-https://img.shields.io/badge/-GitHub%2520Actions-2088FF?logo=githubactions&logoColor=white GitHub Actions CI/CD
+---
 
-https://img.shields.io/badge/-GitHub%2520Secrets-2088FF?logo=github&logoColor=white Secrets Management
+## 📁 Project Structure
 
-Monitoring & Observability
-https://img.shields.io/badge/-Prometheus-E6522C?logo=prometheus&logoColor=white Prometheus Metrics Collection
+\`\`\`
+atlas-mlops/
+│
+├── .github/workflows/
+│   └── ci.yaml                 # CI/CD pipeline definition
+│
+├── flask_app/
+│   ├── app.py                  # Flask application entry point
+│   ├── requirements.txt        # Python dependencies
+│   └── Dockerfile              # Container configuration
+│
+├── src/
+│   ├── __init__.py
+│   ├── logger.py               # Logging configuration
+│   ├── data_ingestion.py       # Data loading module
+│   ├── data_preprocessing.py   # Data cleaning & transformation
+│   ├── feature_engineering.py  # Feature creation module
+│   ├── model_building.py       # Model training script
+│   ├── model_evaluation.py     # Model performance metrics
+│   └── register_model.py       # Model version registration
+│
+├── tests/                      # Unit & integration tests
+├── scripts/                    # Utility scripts
+├── models/                     # Saved model artifacts
+│
+├── dvc.yaml                    # DVC pipeline definition
+├── params.yaml                 # Hyperparameters configuration
+├── requirements.txt            # Core dependencies
+├── Dockerfile                  # Root Docker configuration
+├── deployment.yaml             # Kubernetes deployment manifest
+│
+└── README.md                   # Project documentation
+\`\`\`
 
-https://img.shields.io/badge/-Grafana-F46800?logo=grafana&logoColor=white Grafana Dashboards
+---
 
-Custom Logging Framework
+## ⚙️ Installation & Setup
 
-Real-time Application Monitoring
+### **Prerequisites**
+* **Python 3.10+** - Programming language runtime
+* **Docker Desktop** - Container environment for local development
+* **kubectl** - Kubernetes command-line interface
+* **eksctl** - AWS EKS cluster management tool
+* **AWS CLI** - Amazon Web Services command-line interface
+* **Git** - Version control system
+* **Conda/Miniconda** - Python environment manager
 
-Development Tools
-https://img.shields.io/badge/-Cookiecutter-D4AA00?logo=cookiecutter&logoColor=white Data Science Project Template
+### **Local Development Setup**
 
-https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white Version Control
+\`\`\`bash
+# Clone repository
+git clone https://github.com/Ajs2207/MLOPS-Capstone-Project.git
+cd MLOPS-Capstone-Project
 
-https://img.shields.io/badge/-Jupyter-F37626?logo=jupyter&logoColor=white Development Notebooks
+# Create virtual environment
+conda create -n atlas python=3.10
+conda activate atlas
 
-📦 Pipeline Components
-Data Pipeline
-https://img.shields.io/badge/-Data%2520Ingestion-4CAF50 MongoDB-like Data Loading
+# Install dependencies
+pip install -r requirements.txt
 
-https://img.shields.io/badge/-Data%2520Preprocessing-2196F3 Cleaning & Transformation
+# Run locally
+cd flask_app
+python app.py
+\`\`\`
 
-https://img.shields.io/badge/-Feature%2520Engineering-FF9800 Feature Creation
+### **DVC Pipeline Execution**
 
-https://img.shields.io/badge/-DVC%2520Pipeline-13ADC7 Reproducible Workflows
+\`\`\`bash
+# Initialize DVC
+dvc init
 
-Model Pipeline
-https://img.shields.io/badge/-Model%2520Building-9C27B0 Training & Hyperparameter Tuning
+# Configure remote storage
+dvc remote add -d myremote s3://your-bucket-name
 
-https://img.shields.io/badge/-Model%2520Evaluation-F44336 Performance Metrics
+# Run pipeline
+dvc repro
 
-https://img.shields.io/badge/-Model%2520Registry-607D8B Version Control & Storage
+# Check status
+dvc status
+\`\`\`
 
-https://img.shields.io/badge/-Model%2520Serving-795548 Flask API Endpoint
+### **Docker Build & Run**
 
-Infrastructure Components
-https://img.shields.io/badge/-Parameter%2520Management-FF5722 params.yaml Configuration
+\`\`\`bash
+# Build image
+docker build -t capstone-app:latest .
 
-https://img.shields.io/badge/-Logging-9E9E9E Centralized Logger
+# Run container
+docker run -p 8888:5000 -e CAPSTONE_TEST=<your-token> capstone-app:latest
+\`\`\`
 
-https://img.shields.io/badge/-Testing-4CAF50 Unit & Integration Tests
+---
 
-https://img.shields.io/badge/-Utility%2520Scripts-607D8B Automation Scripts
+## 🔧 Pipeline Components
 
-🔄 CI/CD Pipeline Stages
-Stage	Tools	Purpose
-Code Commit	Git, GitHub	Version control & collaboration
-Continuous Integration	GitHub Actions, pytest	Automated testing & validation
-Container Build	Docker, Dockerfile	Image creation & optimization
-Registry Push	AWS ECR, AWS CLI	Private image storage
-Continuous Deployment	kubectl, eksctl	Kubernetes deployment
-Health Check	curl, custom scripts	Deployment verification
-☁️ AWS Services Used
-Service	Purpose
-EKS (Elastic Kubernetes Service)	Container orchestration cluster
-S3 (Simple Storage Service)	DVC remote storage for datasets & models
-ECR (Elastic Container Registry)	Private Docker image repository
-EC2	Prometheus & Grafana server instances
-IAM	Access management & security policies
-LoadBalancer	External traffic routing to EKS
-📊 Monitoring Stack Components
-Prometheus Server
-Deployed on EC2 (t3.medium)
+| Component | Description | Tools |
+|-----------|-------------|-------|
+| **Data Ingestion** | Fetches data from source | Python, Pandas |
+| **Data Preprocessing** | Cleaning & data transformation | Pandas, NumPy |
+| **Feature Engineering** | Creates features for modeling | Scikit-learn |
+| **Model Building** | Training & hyperparameter tuning | Scikit-learn |
+| **Model Evaluation** | Performance metrics calculation | Scikit-learn, MLFlow |
+| **Model Registration** | Version control & storage | MLFlow, DVC |
 
-Scrapes metrics from Flask app every 15s
+---
 
-Stores time-series data
+## 🌐 Deployment
 
-Configurable alerting rules
+### **CI/CD Pipeline Stages**
 
-Grafana Server
-Deployed on EC2 (t3.medium)
+| Stage | Tools | Purpose |
+|-------|-------|---------|
+| **Code Commit** | Git, GitHub | Version control & collaboration |
+| **Continuous Integration** | GitHub Actions, pytest | Automated testing & validation |
+| **Container Build** | Docker, Dockerfile | Image creation & optimization |
+| **Registry Push** | AWS ECR, AWS CLI | Private image storage |
+| **Continuous Deployment** | kubectl, eksctl | Kubernetes deployment |
+| **Health Check** | curl, custom scripts | Deployment verification |
 
-Visualizes metrics from Prometheus
+### **Deploy to EKS**
 
-Custom dashboards for model performance
+\`\`\`bash
+# Create EKS cluster
+eksctl create cluster --name flask-app-cluster --region us-east-1 \
+  --nodegroup-name flask-app-nodes --node-type t3.small --nodes 1
 
-Real-time system monitoring
+# Update kubeconfig
+aws eks --region us-east-1 update-kubeconfig --name flask-app-cluster
 
-Metrics Tracked
-Request latency & throughput
+# Deploy application
+kubectl apply -f deployment.yaml
 
-Model prediction times
+# Get LoadBalancer URL
+kubectl get svc flask-app-service
 
-Error rates & success rates
+# Test the deployment
+curl http://<external-ip>:5000
+\`\`\`
 
-CPU & Memory utilization
+### **Sample Kubernetes Deployment**
 
-Custom application metrics
+\`\`\`yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        app: flask-app
+    spec:
+      containers:
+      - name: flask-app
+        image: <aws-account-id>.dkr.ecr.us-east-1.amazonaws.com/capstone-proj:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5000
+      targetPort: 5000
+  selector:
+    app: flask-app
+\`\`\`
 
-🔒 Security Components
-IAM Roles & Policies: Least privilege access control
+---
 
-GitHub Secrets: Encrypted environment variables
+## 📊 Monitoring & Observability
 
-AWS Security Groups: Network-level firewall rules
+### **Prometheus Configuration**
 
-Kubernetes Secrets: Container-level secret management
+\`\`\`yaml
+# prometheus.yml
+global:
+  scrape_interval: 15s
 
-Private Repositories: Code & image security
+scrape_configs:
+  - job_name: "flask-app"
+    static_configs:
+      - targets: ["<load-balancer-dns>:5000"]
+\`\`\`
 
-🧪 Testing Framework
-Test Type	Tools	Coverage
-Unit Tests	pytest	Individual functions & modules
-Integration Tests	pytest	Pipeline component interactions
-API Tests	curl, requests	Flask endpoint validation
-Model Tests	custom scripts	Model accuracy & performance
+### **Metrics Tracked**
+
+| Metric Type | Description |
+|-------------|-------------|
+| **Request Latency** | Time taken to process requests |
+| **Request Throughput** | Number of requests per second |
+| **Model Prediction Time** | Inference latency |
+| **Error Rates** | Percentage of failed requests |
+| **System Resources** | CPU & Memory utilization |
+
+### **Grafana Setup**
+
+* **Launch EC2 instance** for Grafana (t3.medium, 20GB SSD)
+* **Configure security group** to allow port 3000
+* **Install Grafana** and add Prometheus as data source
+* **Create custom dashboards** for visualization and monitoring
+
+---
+
+## 🤝 Contributing
+
+* **Fork** the repository
+* **Create a feature branch** - `git checkout -b feature/amazing-feature`
+* **Commit your changes** - `git commit -m 'Add amazing feature'`
+* **Push to the branch** - `git push origin feature/amazing-feature`
+* **Open** a Pull Request
+
+---
+
+## 📞 Contact
+
+For questions, feedback, or collaboration opportunities:
+
+* **Project Lead:** [Your Name]
+* **Email:** your.email@example.com
+* **LinkedIn:** linkedin.com/in/your-profile
+* **GitHub:** github.com/your-username
+
+---
+
+## 📝 License
+
+This project is for demonstration purposes as part of an MLOps portfolio.
+
+<div align="center">
+
+⭐ Star this repo if you find it useful!
+
+Built with ❤️ for Production ML Systems
+
+</div> ```
